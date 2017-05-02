@@ -1,8 +1,8 @@
 
-mysql/
+mysql/*
 
-cms/wordpress/
+cms/wordpress/*
 
-cms/joomla/
+cms/joomla/*
 
-cms/drupal/
+cms/drupal/*
