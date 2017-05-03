@@ -20,6 +20,7 @@ Using **ghe-tester.sh** you can make a backup of your environment and also resto
 ```bash
 sudo ./ghe-tester.sh
 ```
+![ghe-tester.sh](/img/ghe-tester.gif)
 
 ## Developed by
 @Nesty92 and @adrian011494
