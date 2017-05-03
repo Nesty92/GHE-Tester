@@ -16,7 +16,7 @@ docker-compose up
 ```
 If you are UCI users, then run this command
 ```bash
-docker-compose -f docker-compose-UCI.yml up
+docker-compose -f docker-compose-UCI.yaml up
 ```
 4. Wait for the system up and open the browser in [localhost](http://localhost) and execute your tests.
 
