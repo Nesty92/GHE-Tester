@@ -14,10 +14,10 @@
 ```bash
 docker-compose up
 ```
-	If you are UCI users, then run this command
-	```bash
-	docker-compose -f docker-compose-UCI.yml up
-	```
+If you are UCI users, then run this command
+```bash
+docker-compose -f docker-compose-UCI.yml up
+```
 4. Wait for the system up and open the browser in [localhost](http://localhost) and execute your tests.
 
 5. The system creates three databases (joomla, drupal, wordpres)
