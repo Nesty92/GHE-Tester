@@ -24,7 +24,7 @@ backup (){
     if [ ! -d backups ]; then
     mkdir backups
     fi
-        tar -czvf backups/$bname.tar.gz cms mysql config docker-compose.yaml
+        tar -czvf backups/$bname.tar.gz cms mysql config docker-compose.yaml docker-compose-UCI.yaml
 
 }
 
