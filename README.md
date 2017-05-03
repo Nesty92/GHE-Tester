@@ -1,5 +1,6 @@
 # GHE-Tester
 **GHE-Tester** is a [docker](http://docker.com) enviroment for make hacking tests to most popular CMS.
+![ghe-tester.sh](/img/ghe-tester-vid.gif)
 
 ## CMS supported
 * Wordpress
