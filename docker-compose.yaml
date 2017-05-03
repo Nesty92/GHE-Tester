@@ -2,7 +2,7 @@ version: "2"
 
 services:
   nginx:
-    image: nexus.prod.uci.cu/nginx:alpine
+    image:  nginx:alpine
     ports:
       - "80:80"
     volumes: 
@@ -18,7 +18,7 @@ services:
       - drupal-fpm
 
   wordpress-fpm:
-    image: nexus.prod.uci.cu/wordpress:fpm-alpine
+    image:  wordpress:php7.1-fpm-alpine
     volumes: 
       - ./cms/:/var/www/html/
     links:
@@ -27,7 +27,7 @@ services:
         - "db"
 
   joomla-fpm:
-    image: nexus.prod.uci.cu/joomla:fpm
+    image:  joomla:fpm-php7
     volumes: 
       - ./cms/:/var/www/html/
     depends_on:
@@ -39,7 +39,7 @@ services:
       - JOOMLA_DB_NAME=joomla
 
   drupal-fpm:
-    image: nexus.prod.uci.cu/drupal:fpm
+    image:  drupal:7-fpm-alpine
     volumes: 
       - ./cms/:/var/www/html/
     links:
@@ -48,7 +48,7 @@ services:
         - "db"
 
   db:
-    image: nexus.prod.uci.cu/mysql
+    image:  mysql:5.7
     volumes: 
       - ./mysql/:/var/lib/mysql  
       - ./config/database.sql:/docker-entrypoint-initdb.d/database.sql
