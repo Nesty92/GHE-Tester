@@ -1,0 +1,3 @@
+[submodule "ng-filemanager"]
+	path = ng-filemanager
+	url = https://github.com/adrian011494/ng-filemanager.git
