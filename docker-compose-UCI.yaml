@@ -12,24 +12,31 @@ services:
       - wordpress-fpm:wordpress
       - joomla-fpm:joomla
       - drupal-fpm:drupal
+      
     depends_on:
       - wordpress-fpm
       - joomla-fpm
       - drupal-fpm
+      
 
   wordpress-fpm:
     image: nexus.prod.uci.cu/wordpress:fpm-alpine
+    
     volumes: 
-      - ./www/:/var/www/html/
+      - ./www/:/var/www/html/:rw
+      - ./config/entrypoint.sh:/entrypoint.sh
     links:
       - db:db
     depends_on:
         - "db"
+    entrypoint: /bin/bash -c "chown -R www-data:www-data /var/www/html/cms/wordpress; ln -s /var/www/html/ng-filemanager/bridges/php-local /var/www/html/cms/wordpress/php-local ; /entrypoint.sh"
+
 
   joomla-fpm:
     image: nexus.prod.uci.cu/joomla:fpm
     volumes: 
-      - ./www/:/var/www/html/
+      - ./www/:/var/www/html/:rw
+      - ./config/entrypoint.sh:/entrypoint.sh
     depends_on:
         - "db"
     environment:
@@ -37,15 +44,19 @@ services:
       - JOOMLA_DB_USER=root
       - JOOMLA_DB_PASSWORD=ghe
       - JOOMLA_DB_NAME=joomla
+    entrypoint: /bin/bash -c "chown -R www-data:www-data /var/www/html/cms/joomla; ln -s /var/www/html/ng-filemanager/bridges/php-local /var/www/html/cms/joomla/php-local ; /entrypoint.sh"
 
   drupal-fpm:
     image: nexus.prod.uci.cu/drupal:fpm
     volumes: 
-      - ./www/:/var/www/html/
+      - ./www/:/var/www/html/:rw
+      - ./config/entrypoint.sh:/entrypoint.sh
     links:
       - db:db
     depends_on:
         - "db"
+    entrypoint: /bin/bash -c "chown -R www-data:www-data /var/www/html/cms/drupal; ln -s /var/www/html/ng-filemanager/bridges/php-local /var/www/html/cms/drupal/php-local ; /entrypoint.sh"
+
 
   db:
     image: nexus.prod.uci.cu/mysql
