@@ -24,7 +24,7 @@ backup (){
     if [ ! -d backups ]; then
     mkdir backups
     fi
-        tar -czvf backups/$bname.tar.gz cms mysql config docker-compose.yaml docker-compose-UCI.yaml
+        tar -czvf backups/$bname.tar.gz www/sites mysql config docker-compose.yaml docker-compose-UCI.yaml
 
 }
 
@@ -48,7 +48,7 @@ restore (){
 }
 
 borrar(){
-    rm -R cms mysql
+    rm -R www/sites mysql
 }
 
 menu (){
