@@ -17,7 +17,7 @@
     ```bash
     docker-compose up
     ```
-    If you are UCI users, then run this command
+    or
     ```bash
     docker-compose -f docker-compose-UCI.yaml up
     ```
