@@ -11,7 +11,7 @@
 * Postgresql
 
 ## Installation
-1. First you need install and configure [docker](http://docker.com) and [docker-compose](https://docs.docker.com/compose/).
+1. First you need install and configure [docker](http://docker.com) and [docker-compose](https://docs.docker.com/compose/) and download [latest release](https://github.com/Nesty92/GHE-Tester/releases/latest).
 2. Copy to folder "www/sites/" the web aplications that you use in your tests.
 3. Run in the terminal:
     ```bash
